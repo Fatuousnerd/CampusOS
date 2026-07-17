@@ -3,10 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { ItemDescription, ItemTitle } from "@/components/ui/item";
 import Image from "next/image";
-import { useParams } from "next/navigation";
 
-const Page = ({ params }: { params: { productId: string } }) => {
-  const { productId } = useParams();
+const Page = () => {
   return (
     <>
       <div className="flex p-5 gap-15 w-full h-screen">

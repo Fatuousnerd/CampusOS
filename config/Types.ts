@@ -8,7 +8,7 @@ export type LoadingState = {
   setLoading: (key: string, value: boolean) => void;
 };
 
-export type ErrorType = PostgrestError | AxiosError | TypeError | string | null;
+export type ErrorType = TypeError | string | null;
 
 export type ErrorState = {
   err: Record<string, ErrorType>;

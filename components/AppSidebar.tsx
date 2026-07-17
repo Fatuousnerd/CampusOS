@@ -14,7 +14,7 @@ import {
   useSidebar,
 } from "./ui/sidebar";
 import Link from "next/link";
-import { LucideIcon, LayoutDashboard, Calendar, ShoppingBag, Wrench } from "lucide-react";
+import { LayoutDashboard, Calendar, ShoppingBag, Wrench } from "lucide-react";
 
 const AppSidebar = () => {
   const { open } = useSidebar();
@@ -22,7 +22,7 @@ const AppSidebar = () => {
     <>
       <Sidebar collapsible="icon" variant="floating">
         <SidebarHeader>
-          <Item variant={'muted'}>
+          <Item variant={"muted"}>
             <Image src={"globe.svg"} alt="Logo" width={50} height={50} />
             {open && (
               <ItemTitle className="font-bold text-2xl">CampusOS</ItemTitle>
@@ -34,7 +34,11 @@ const AppSidebar = () => {
             <SidebarMenu>
               {[
                 { name: "Dashboard", path: "/", icon: LayoutDashboard },
-                { name: "Marketplace", path: "/marketplace", icon: ShoppingBag },
+                {
+                  name: "Marketplace",
+                  path: "/marketplace",
+                  icon: ShoppingBag,
+                },
                 { name: "Services", path: "/services", icon: Wrench },
                 { name: "Events", path: "/events", icon: Calendar },
               ].map((item) => {

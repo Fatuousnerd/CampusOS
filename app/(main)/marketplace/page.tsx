@@ -4,7 +4,6 @@ import { useState } from "react";
 import ProductCard, { ProductType } from "@/components/marketplace/ProductCard";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Search, FilterX, SlidersHorizontal, ArrowUpDown } from "lucide-react";
 
 // Mock products database for campus

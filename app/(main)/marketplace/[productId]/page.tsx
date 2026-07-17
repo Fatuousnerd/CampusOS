@@ -4,8 +4,20 @@ import { useParams, useRouter } from "next/navigation";
 import { useCart } from "@/lib/zustand/cartStore";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowLeft, ShoppingBag, MessageSquare, Shield, Send, CheckCircle2 } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import {
+  ArrowLeft,
+  ShoppingBag,
+  MessageSquare,
+  Shield,
+  Send,
+} from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -20,7 +32,7 @@ const mockProducts = [
     condition: "Like New" as const,
     seller: "Sarah Jenkins",
     sellerPhone: "+254 701 445588",
-    dorm: "Grace Hall, Rm 102"
+    dorm: "Grace Hall, Rm 102",
   },
   {
     id: 2,
@@ -31,7 +43,7 @@ const mockProducts = [
     condition: "Good" as const,
     seller: "James Mwangi",
     sellerPhone: "+254 711 223344",
-    dorm: "Mandela Hall, Rm 304"
+    dorm: "Mandela Hall, Rm 304",
   },
   {
     id: 3,
@@ -42,7 +54,7 @@ const mockProducts = [
     condition: "Fair" as const,
     seller: "Daniel Kim",
     sellerPhone: "+254 722 556677",
-    dorm: "Winston Churchill Hall, Rm 009"
+    dorm: "Winston Churchill Hall, Rm 009",
   },
   {
     id: 4,
@@ -53,7 +65,7 @@ const mockProducts = [
     condition: "New" as const,
     seller: "Alex Mercer",
     sellerPhone: "+254 733 889900",
-    dorm: "Timbuktu Hostel, Rm 42"
+    dorm: "Timbuktu Hostel, Rm 42",
   },
   {
     id: 5,
@@ -64,7 +76,7 @@ const mockProducts = [
     condition: "Like New" as const,
     seller: "Elena Rostova",
     sellerPhone: "+254 744 112233",
-    dorm: "Grace Hall, Rm 221"
+    dorm: "Grace Hall, Rm 221",
   },
   {
     id: 6,
@@ -75,7 +87,7 @@ const mockProducts = [
     condition: "Good" as const,
     seller: "Marcus Vance",
     sellerPhone: "+254 755 443322",
-    dorm: "Mandela Hall, Rm 115"
+    dorm: "Mandela Hall, Rm 115",
   },
   {
     id: 7,
@@ -86,7 +98,7 @@ const mockProducts = [
     condition: "Good" as const,
     seller: "Chloe Bennett",
     sellerPhone: "+254 766 887766",
-    dorm: "Pioneer Hostel, Rm 211"
+    dorm: "Pioneer Hostel, Rm 211",
   },
   {
     id: 8,
@@ -97,7 +109,7 @@ const mockProducts = [
     condition: "Fair" as const,
     seller: "Tyler Durden",
     sellerPhone: "+254 777 990011",
-    dorm: "Basement Dorm, Rm B12"
+    dorm: "Basement Dorm, Rm B12",
   },
   {
     id: 9,
@@ -108,8 +120,8 @@ const mockProducts = [
     condition: "New" as const,
     seller: "Emily Watson",
     sellerPhone: "+254 788 110022",
-    dorm: "Grace Hall, Rm 310"
-  }
+    dorm: "Grace Hall, Rm 310",
+  },
 ];
 
 export default function ProductDetailPage() {
@@ -128,9 +140,16 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center p-6">
-        <h2 className="text-2xl font-bold text-foreground">Product Not Found</h2>
-        <p className="text-muted-foreground mt-2">The product you are trying to view does not exist or has been sold.</p>
-        <Button onClick={() => router.push("/marketplace")} className="mt-4 rounded-full">
+        <h2 className="text-2xl font-bold text-foreground">
+          Product Not Found
+        </h2>
+        <p className="text-muted-foreground mt-2">
+          The product you are trying to view does not exist or has been sold.
+        </p>
+        <Button
+          onClick={() => router.push("/marketplace")}
+          className="mt-4 rounded-full"
+        >
           Back to Marketplace
         </Button>
       </div>
@@ -143,7 +162,7 @@ export default function ProductDetailPage() {
       name: product.name,
       desc: product.desc,
       price: product.price,
-      category: product.category
+      category: product.category,
     });
     toast.success(`Added ${product.name} to cart!`);
   };
@@ -160,7 +179,7 @@ export default function ProductDetailPage() {
     setTimeout(() => {
       setChatHistory((prev) => [
         ...prev,
-        `${product.seller}: Hey! Yes, it's still available. I can meet you at the Student Union building or outside my dorm (${product.dorm}) around 4:00 PM today. Let me know!`
+        `${product.seller}: Hey! Yes, it's still available. I can meet you at the Student Union building or outside my dorm (${product.dorm}) around 4:00 PM today. Let me know!`,
       ]);
       setIsSending(false);
       toast.success(`Message sent to ${product.seller}!`);
@@ -169,7 +188,6 @@ export default function ProductDetailPage() {
 
   return (
     <div className="flex-1 w-full max-w-6xl mx-auto p-4 sm:p-8 space-y-6 animate-in fade-in duration-300">
-      
       {/* Back button */}
       <div>
         <Button
@@ -183,7 +201,6 @@ export default function ProductDetailPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
         {/* Left columns: Details & description */}
         <div className="lg:col-span-2 space-y-6">
           <Card className="bg-card border-border rounded-2xl overflow-hidden shadow-sm">
@@ -192,15 +209,21 @@ export default function ProductDetailPage() {
                 {product.name.substring(0, 3)}
               </span>
               <div className="absolute top-4 left-4 flex gap-2">
-                <Badge variant="outline" className="bg-primary/10 border-primary/20 text-primary font-bold">
+                <Badge
+                  variant="outline"
+                  className="bg-primary/10 border-primary/20 text-primary font-bold"
+                >
                   {product.category}
                 </Badge>
-                <Badge variant="outline" className="bg-amber-500/10 border-amber-500/20 text-amber-500 font-bold">
+                <Badge
+                  variant="outline"
+                  className="bg-amber-500/10 border-amber-500/20 text-amber-500 font-bold"
+                >
                   {product.condition}
                 </Badge>
               </div>
             </div>
-            
+
             <CardContent className="p-6 space-y-4">
               <div>
                 <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-tight">
@@ -210,20 +233,22 @@ export default function ProductDetailPage() {
                   {product.price.toLocaleString("en-US", {
                     style: "currency",
                     currency: "KES",
-                    minimumFractionDigits: 0
+                    minimumFractionDigits: 0,
                   })}
                 </div>
               </div>
 
               <div className="border-t border-border/60 pt-4">
-                <h3 className="font-bold text-sm text-foreground mb-2">Item Description</h3>
+                <h3 className="font-bold text-sm text-foreground mb-2">
+                  Item Description
+                </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {product.desc}
                 </p>
               </div>
 
               <div className="flex gap-2.5 pt-4">
-                <Button 
+                <Button
                   onClick={handleAddToCart}
                   className="flex-1 rounded-full font-bold h-11 flex items-center justify-center gap-2 shadow"
                 >
@@ -237,9 +262,13 @@ export default function ProductDetailPage() {
           <Card className="bg-muted/30 border border-border/80 rounded-2xl p-4 flex gap-3 text-xs leading-normal">
             <Shield className="h-5 w-5 text-indigo-500 flex-shrink-0 mt-0.5" />
             <div>
-              <h4 className="font-bold text-foreground">Secure Campus Trading Guide</h4>
+              <h4 className="font-bold text-foreground">
+                Secure Campus Trading Guide
+              </h4>
               <p className="text-muted-foreground text-[11px] mt-0.5">
-                Always meet in public, well-lit spaces on campus (e.g. library lobbies, dining halls, or Student Union buildings). Inspect the item thoroughly before making card or balance payments.
+                Always meet in public, well-lit spaces on campus (e.g. library
+                lobbies, dining halls, or Student Union buildings). Inspect the
+                item thoroughly before making card or balance payments.
               </p>
             </div>
           </Card>
@@ -250,8 +279,12 @@ export default function ProductDetailPage() {
           {/* Seller Card */}
           <Card className="bg-card border-border rounded-2xl shadow-sm overflow-hidden">
             <CardHeader className="border-b border-border bg-muted/20">
-              <CardTitle className="text-base font-bold">Seller Information</CardTitle>
-              <CardDescription>Verify coordinates to organize pickup.</CardDescription>
+              <CardTitle className="text-base font-bold">
+                Seller Information
+              </CardTitle>
+              <CardDescription>
+                Verify coordinates to organize pickup.
+              </CardDescription>
             </CardHeader>
             <CardContent className="p-4 space-y-4 text-sm">
               <div className="flex items-center gap-3">
@@ -259,19 +292,27 @@ export default function ProductDetailPage() {
                   {product.seller.substring(0, 2)}
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground">{product.seller}</h4>
-                  <span className="text-xs text-muted-foreground">Student Seller</span>
+                  <h4 className="font-bold text-foreground">
+                    {product.seller}
+                  </h4>
+                  <span className="text-xs text-muted-foreground">
+                    Student Seller
+                  </span>
                 </div>
               </div>
 
               <div className="space-y-2 border-t border-border pt-4 text-xs">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Coordinates:</span>
-                  <span className="font-semibold text-foreground">{product.dorm}</span>
+                  <span className="font-semibold text-foreground">
+                    {product.dorm}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Phone Contact:</span>
-                  <span className="font-semibold text-foreground">{product.sellerPhone}</span>
+                  <span className="font-semibold text-foreground">
+                    {product.sellerPhone}
+                  </span>
                 </div>
               </div>
             </CardContent>
@@ -281,33 +322,42 @@ export default function ProductDetailPage() {
           <Card className="bg-card border-border rounded-2xl shadow-sm overflow-hidden flex flex-col h-80">
             <CardHeader className="border-b border-border p-3 bg-muted/10">
               <CardTitle className="text-xs font-bold flex items-center gap-1.5 text-foreground">
-                <MessageSquare className="h-3.5 w-3.5 text-primary" /> Chat with {product.seller.split(" ")[0]}
+                <MessageSquare className="h-3.5 w-3.5 text-primary" /> Chat with{" "}
+                {product.seller.split(" ")[0]}
               </CardTitle>
             </CardHeader>
-            
+
             {/* Messages Body */}
             <div className="flex-1 overflow-y-auto p-3 space-y-2.5 text-xs">
               {chatHistory.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground text-[11px] p-4">
-                  <p>Send a message to schedule a pickup or negotiate the price.</p>
+                  <p>
+                    Send a message to schedule a pickup or negotiate the price.
+                  </p>
                 </div>
               ) : (
                 chatHistory.map((msg, index) => {
                   const isUser = msg.startsWith("You:");
                   const sender = isUser ? "You" : product.seller.split(" ")[0];
-                  const text = isUser ? msg.substring(4) : msg.substring(product.seller.length + 2);
+                  const text = isUser
+                    ? msg.substring(4)
+                    : msg.substring(product.seller.length + 2);
                   return (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`flex flex-col max-w-[85%] p-2 rounded-xl border leading-relaxed ${
-                        isUser 
-                          ? "ml-auto bg-primary border-primary/20 text-primary-foreground rounded-br-none" 
+                        isUser
+                          ? "ml-auto bg-primary border-primary/20 text-primary-foreground rounded-br-none"
                           : "bg-muted border-border text-foreground rounded-bl-none"
                       }`}
                     >
-                      <span className={`text-[9px] font-bold uppercase tracking-wider block mb-0.5 ${
-                        isUser ? "text-primary-foreground/75" : "text-muted-foreground"
-                      }`}>
+                      <span
+                        className={`text-[9px] font-bold uppercase tracking-wider block mb-0.5 ${
+                          isUser
+                            ? "text-primary-foreground/75"
+                            : "text-muted-foreground"
+                        }`}
+                      >
                         {sender}
                       </span>
                       <span>{text}</span>
@@ -318,7 +368,10 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Input Form */}
-            <form onSubmit={handleSendMessage} className="border-t border-border p-2 bg-muted/20 flex gap-2">
+            <form
+              onSubmit={handleSendMessage}
+              className="border-t border-border p-2 bg-muted/20 flex gap-2"
+            >
               <input
                 type="text"
                 placeholder="Type a message..."
@@ -327,9 +380,9 @@ export default function ProductDetailPage() {
                 disabled={isSending}
                 className="flex-1 bg-background border border-border rounded-full px-3 py-1.5 text-xs text-foreground focus:outline-none focus:border-primary disabled:opacity-50"
               />
-              <Button 
-                type="submit" 
-                size="icon" 
+              <Button
+                type="submit"
+                size="icon"
                 className="rounded-full shrink-0 h-7 w-7"
                 disabled={isSending || !chatMessage.trim()}
               >
