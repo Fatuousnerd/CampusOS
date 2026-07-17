@@ -33,7 +33,7 @@ const AppSidebar = () => {
           <SidebarGroupContent className="px-3">
             <SidebarMenu>
               {[
-                { name: "Dashboard", path: "/", icon: LayoutDashboard },
+                { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
                 {
                   name: "Marketplace",
                   path: "/marketplace",

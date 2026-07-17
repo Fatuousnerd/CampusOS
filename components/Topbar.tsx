@@ -83,7 +83,7 @@ const Topbar = () => {
   return (
     <div className="w-full h-16 bg-background/80 backdrop-blur-md sticky top-0 z-40 flex items-center justify-between py-2 px-6 sm:px-10 border-b border-border transition-colors duration-200">
       <ItemTitle className="font-bold text-2xl tracking-tight bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">
-        <Link href={"/"}>CampusOS</Link>
+        <Link href={"/dashboard"}>CampusOS</Link>
       </ItemTitle>
 
       <div className="flex items-center gap-4">
