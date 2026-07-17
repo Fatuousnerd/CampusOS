@@ -27,7 +27,6 @@ import {
   Sun,
   Moon,
   Coffee,
-  Printer,
   Shirt,
 } from "lucide-react";
 import { useState } from "react";
@@ -35,7 +34,7 @@ import { useTheme } from "@/hooks/useTheme";
 
 export default function LandingPage() {
   const { theme, toggleTheme } = useTheme();
-  const [cardTapped, setCardTapped] = useState(false);
+  // const [cardTapped, setCardTapped] = useState(false);
   const [simulatedStatus, setSimulatedStatus] = useState("idle"); // idle, scanning, success
 
   const triggerTapSimulation = () => {
@@ -74,13 +73,22 @@ export default function LandingPage() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#features" className="hover:text-foreground transition-colors">
+            <a
+              href="#features"
+              className="hover:text-foreground transition-colors"
+            >
               Apps & Features
             </a>
-            <a href="#nfc-wallet" className="hover:text-foreground transition-colors">
+            <a
+              href="#nfc-wallet"
+              className="hover:text-foreground transition-colors"
+            >
               Smart NFC Card
             </a>
-            <a href="#statistics" className="hover:text-foreground transition-colors">
+            <a
+              href="#statistics"
+              className="hover:text-foreground transition-colors"
+            >
               Campus Stats
             </a>
           </nav>
@@ -102,7 +110,10 @@ export default function LandingPage() {
             </Button>
 
             <Link href="/auth">
-              <Button variant="ghost" className="rounded-full text-xs font-semibold">
+              <Button
+                variant="ghost"
+                className="rounded-full text-xs font-semibold"
+              >
                 Sign In
               </Button>
             </Link>
@@ -135,7 +146,8 @@ export default function LandingPage() {
         {/* Hero Description */}
         <p className="mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl font-normal leading-relaxed">
           Unlock a seamless campus experience. Trade items on the marketplace,
-          book smart services, and access event tickets—all powered by your unified student identity.
+          book smart services, and access event tickets—all powered by your
+          unified student identity.
         </p>
 
         {/* Hero CTAs */}
@@ -191,7 +203,9 @@ export default function LandingPage() {
                 />
               </div>
               <div className="text-left">
-                <h3 className="text-lg sm:text-2xl font-bold leading-none">Alex Mercer</h3>
+                <h3 className="text-lg sm:text-2xl font-bold leading-none">
+                  Alex Mercer
+                </h3>
                 <p className="text-xs text-indigo-100 mt-1.5">
                   Computer Science | Class of 2027
                 </p>
@@ -224,14 +238,18 @@ export default function LandingPage() {
       </section>
 
       {/* Core Features / Applications Section */}
-      <section id="features" className="relative z-10 py-24 border-t border-border/40 bg-muted/20">
+      <section
+        id="features"
+        className="relative z-10 py-24 border-t border-border/40 bg-muted/20"
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
               One Digital Ecosystem, Three Core Apps
             </h2>
             <p className="mt-4 text-muted-foreground text-sm sm:text-base">
-              Everything you need to navigate your day-to-day student routine is built directly into our responsive modular client dashboard.
+              Everything you need to navigate your day-to-day student routine is
+              built directly into our responsive modular client dashboard.
             </p>
           </div>
 
@@ -243,26 +261,38 @@ export default function LandingPage() {
                 <div className="h-12 w-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
                   <ShoppingBag className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl font-bold">Campus Marketplace</CardTitle>
+                <CardTitle className="text-xl font-bold">
+                  Campus Marketplace
+                </CardTitle>
                 <CardDescription className="text-sm mt-1">
-                  Ditch third-party sites. Trade textbook copies, room gear, or appliances directly with fellow students. Safe, instant, card-authenticated.
+                  Ditch third-party sites. Trade textbook copies, room gear, or
+                  appliances directly with fellow students. Safe, instant,
+                  card-authenticated.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 flex-1">
                 {/* Mini Mock Marketplace items */}
                 <div className="p-3 border border-border/80 rounded-xl bg-muted/40 text-xs flex justify-between items-center">
-                  <span className="font-semibold text-foreground">Calculus Stewart 9th Ed</span>
+                  <span className="font-semibold text-foreground">
+                    Calculus Stewart 9th Ed
+                  </span>
                   <span className="font-bold text-primary">KES 800</span>
                 </div>
                 <div className="p-3 border border-border/80 rounded-xl bg-muted/40 text-xs flex justify-between items-center">
-                  <span className="font-semibold text-foreground">Dorm Refrigerator (Used)</span>
+                  <span className="font-semibold text-foreground">
+                    Dorm Refrigerator (Used)
+                  </span>
                   <span className="font-bold text-primary">KES 9,500</span>
                 </div>
               </CardContent>
               <CardFooter className="pt-4 border-t border-border/40 mt-6">
                 <Link href="/marketplace" className="w-full">
-                  <Button variant="ghost" className="w-full justify-between font-bold text-xs rounded-lg group-hover:bg-muted">
-                    Explore Listings <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-between font-bold text-xs rounded-lg group-hover:bg-muted"
+                  >
+                    Explore Listings{" "}
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </CardFooter>
@@ -275,9 +305,12 @@ export default function LandingPage() {
                 <div className="h-12 w-12 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 transition-transform">
                   <Wrench className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl font-bold">Smart Student Services</CardTitle>
+                <CardTitle className="text-xl font-bold">
+                  Smart Student Services
+                </CardTitle>
                 <CardDescription className="text-sm mt-1">
-                  Book campus laundry, order meal plans, or trigger remote dorm print jobs in seconds. Track statuses real-time.
+                  Book campus laundry, order meal plans, or trigger remote dorm
+                  print jobs in seconds. Track statuses real-time.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 flex-1">
@@ -289,7 +322,9 @@ export default function LandingPage() {
                   <div className="flex-1">
                     <div className="flex justify-between font-semibold">
                       <span>Laundry Service</span>
-                      <span className="text-[10px] text-amber-500">85% Processed</span>
+                      <span className="text-[10px] text-amber-500">
+                        85% Processed
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -300,15 +335,21 @@ export default function LandingPage() {
                   <div className="flex-1">
                     <div className="flex justify-between font-semibold">
                       <span>Lunch Meal Prep</span>
-                      <span className="text-[10px] text-green-500">Ready for Pick Up</span>
+                      <span className="text-[10px] text-green-500">
+                        Ready for Pick Up
+                      </span>
                     </div>
                   </div>
                 </div>
               </CardContent>
               <CardFooter className="pt-4 border-t border-border/40 mt-6">
                 <Link href="/services" className="w-full">
-                  <Button variant="ghost" className="w-full justify-between font-bold text-xs rounded-lg group-hover:bg-muted">
-                    Book Services <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-between font-bold text-xs rounded-lg group-hover:bg-muted"
+                  >
+                    Book Services{" "}
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </CardFooter>
@@ -321,32 +362,52 @@ export default function LandingPage() {
                 <div className="h-12 w-12 bg-pink-500/10 rounded-2xl flex items-center justify-center text-pink-600 mb-4 group-hover:scale-110 transition-transform">
                   <Calendar className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl font-bold">Events & RSVPs</CardTitle>
+                <CardTitle className="text-xl font-bold">
+                  Events & RSVPs
+                </CardTitle>
                 <CardDescription className="text-sm mt-1">
-                  Discover hacking sprints, sports events, and parties. Secure free tickets, manage invitations, and scan check-in QR credentials.
+                  Discover hacking sprints, sports events, and parties. Secure
+                  free tickets, manage invitations, and scan check-in QR
+                  credentials.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 flex-1">
                 {/* Mini Mock Events listings */}
                 <div className="p-3 border border-border/80 rounded-xl bg-muted/40 text-xs flex justify-between items-center">
                   <div>
-                    <div className="font-semibold text-foreground">Annual Hackathon 2026</div>
-                    <span className="text-[10px] text-muted-foreground">Tomorrow, 9:00 AM</span>
+                    <div className="font-semibold text-foreground">
+                      Annual Hackathon 2026
+                    </div>
+                    <span className="text-[10px] text-muted-foreground">
+                      Tomorrow, 9:00 AM
+                    </span>
                   </div>
-                  <span className="px-2 py-0.5 rounded-full bg-green-500/10 text-green-500 font-bold text-[9px]">RSVP ACTIVE</span>
+                  <span className="px-2 py-0.5 rounded-full bg-green-500/10 text-green-500 font-bold text-[9px]">
+                    RSVP ACTIVE
+                  </span>
                 </div>
                 <div className="p-3 border border-border/80 rounded-xl bg-muted/40 text-xs flex justify-between items-center">
                   <div>
-                    <div className="font-semibold text-foreground">Engineering BBQ Social</div>
-                    <span className="text-[10px] text-muted-foreground">July 20th, 6:00 PM</span>
+                    <div className="font-semibold text-foreground">
+                      Engineering BBQ Social
+                    </div>
+                    <span className="text-[10px] text-muted-foreground">
+                      July 20th, 6:00 PM
+                    </span>
                   </div>
-                  <span className="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-500 font-bold text-[9px]">214 Attending</span>
+                  <span className="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-500 font-bold text-[9px]">
+                    214 Attending
+                  </span>
                 </div>
               </CardContent>
               <CardFooter className="pt-4 border-t border-border/40 mt-6">
                 <Link href="/events" className="w-full">
-                  <Button variant="ghost" className="w-full justify-between font-bold text-xs rounded-lg group-hover:bg-muted">
-                    Explore RSVPs <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-between font-bold text-xs rounded-lg group-hover:bg-muted"
+                  >
+                    Explore RSVPs{" "}
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </CardFooter>
@@ -356,7 +417,10 @@ export default function LandingPage() {
       </section>
 
       {/* Interactive tap section */}
-      <section id="nfc-wallet" className="relative z-10 py-24 border-t border-border/40 bg-background overflow-hidden">
+      <section
+        id="nfc-wallet"
+        className="relative z-10 py-24 border-t border-border/40 bg-background overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/20 bg-green-500/5 text-green-600 dark:text-green-400 text-xs font-semibold">
@@ -367,26 +431,34 @@ export default function LandingPage() {
               A Unified Smart ID Wallet. Tap and Go.
             </h2>
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-              The CampusOS wallet functions as your digital keycard. Access dining halls, confirm laundry bookings, authenticate purchases, or get admitted to hackathons by simply generating your NFC QR.
+              The CampusOS wallet functions as your digital keycard. Access
+              dining halls, confirm laundry bookings, authenticate purchases, or
+              get admitted to hackathons by simply generating your NFC QR.
             </p>
             <div className="space-y-3.5">
               <div className="flex gap-3">
                 <div className="h-6 w-6 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-600 flex-shrink-0 mt-0.5">
                   <Check className="h-3.5 w-3.5 font-black" />
                 </div>
-                <span className="text-sm font-medium text-foreground">Zero hardware dependencies: works on any smartphone</span>
+                <span className="text-sm font-medium text-foreground">
+                  Zero hardware dependencies: works on any smartphone
+                </span>
               </div>
               <div className="flex gap-3">
                 <div className="h-6 w-6 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-600 flex-shrink-0 mt-0.5">
                   <Check className="h-3.5 w-3.5 font-black" />
                 </div>
-                <span className="text-sm font-medium text-foreground">Secure cryptographical handshakes protect campus funds</span>
+                <span className="text-sm font-medium text-foreground">
+                  Secure cryptographical handshakes protect campus funds
+                </span>
               </div>
               <div className="flex gap-3">
                 <div className="h-6 w-6 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-600 flex-shrink-0 mt-0.5">
                   <Check className="h-3.5 w-3.5 font-black" />
                 </div>
-                <span className="text-sm font-medium text-foreground">Auto-refresh QR codes block double-spend operations</span>
+                <span className="text-sm font-medium text-foreground">
+                  Auto-refresh QR codes block double-spend operations
+                </span>
               </div>
             </div>
             <div className="pt-2">
@@ -415,7 +487,8 @@ export default function LandingPage() {
                 <div className="flex flex-col items-center text-center my-auto space-y-4">
                   <Smartphone className="h-16 w-16 text-slate-500 animate-pulse" />
                   <p className="text-xs text-slate-400 font-semibold max-w-[180px]">
-                    Hold card close to reader or tap button to initiate handshake
+                    Hold card close to reader or tap button to initiate
+                    handshake
                   </p>
                 </div>
               )}
@@ -437,7 +510,9 @@ export default function LandingPage() {
                     <Check className="h-8 w-8 text-white stroke-[3]" />
                   </div>
                   <div>
-                    <h4 className="text-base font-extrabold text-white">Payment Received</h4>
+                    <h4 className="text-base font-extrabold text-white">
+                      Payment Received
+                    </h4>
                     <p className="text-[11px] text-green-400 mt-1 font-bold">
                       Deducted: KES 300.00
                     </p>
@@ -472,29 +547,44 @@ export default function LandingPage() {
       </section>
 
       {/* Statistics Section */}
-      <section id="statistics" className="relative z-10 py-20 border-t border-border/40 bg-muted/20">
+      <section
+        id="statistics"
+        className="relative z-10 py-20 border-t border-border/40 bg-muted/20"
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div className="p-8 border border-border/60 bg-card rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="h-10 w-10 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-600 mx-auto mb-4">
                 <Users className="h-5 w-5" />
               </div>
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-foreground">15,000+</h3>
-              <p className="text-sm text-muted-foreground mt-2 font-medium">Active Students Authenticated</p>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-foreground">
+                15,000+
+              </h3>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                Active Students Authenticated
+              </p>
             </div>
             <div className="p-8 border border-border/60 bg-card rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="h-10 w-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary mx-auto mb-4">
                 <TrendingUp className="h-5 w-5" />
               </div>
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-foreground">KES 1.2M+</h3>
-              <p className="text-sm text-muted-foreground mt-2 font-medium">Peer Transactions Completed</p>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-foreground">
+                KES 1.2M+
+              </h3>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                Peer Transactions Completed
+              </p>
             </div>
             <div className="p-8 border border-border/60 bg-card rounded-2xl text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="h-10 w-10 bg-green-500/10 rounded-xl flex items-center justify-center text-green-600 mx-auto mb-4">
                 <Shield className="h-5 w-5" />
               </div>
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-foreground">99.9%</h3>
-              <p className="text-sm text-muted-foreground mt-2 font-medium">Campus Uptime Maintained</p>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-foreground">
+                99.9%
+              </h3>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                Campus Uptime Maintained
+              </p>
             </div>
           </div>
         </div>
@@ -513,7 +603,8 @@ export default function LandingPage() {
           </div>
 
           <p className="text-muted-foreground text-center md:text-left">
-            &copy; 2026 CampusOS Inc. Engineered for campus developers and students.
+            &copy; 2026 CampusOS Inc. Engineered for campus developers and
+            students.
           </p>
 
           <div className="flex items-center gap-4 text-xs font-semibold text-muted-foreground">
