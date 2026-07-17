@@ -4,7 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { useUser } from "./useUser";
 import { useMeta } from "./useMeta";
-import { useLoading } from "@/lib/zustand/store/stores";
+import { useLoading } from "@/lib/zustand/stores";
 
 export function useRedirect(redirectPath?: string) {
   const router = useRouter();
